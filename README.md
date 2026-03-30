@@ -2,7 +2,7 @@
 
 A professional cybersecurity-themed portfolio website with terminal aesthetics, matrix rain background, and command-line interface design.
 
-![Portfolio Preview]( https://cipher-bhai.github.io/Portfolio/)
+<a href="https://cipher-bhai.github.io/Portfolio/" target="_blank">Click to View live Portfolio Website</a>
 
 ## 🎯 FEATURES
 
