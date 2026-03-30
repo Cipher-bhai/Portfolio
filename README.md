@@ -1,4 +1,4 @@
-# 💻 BLACKHAT HACKER PORTFOLIO
+# 💻  CIPHER PORTFOLIO
 
 A professional cybersecurity-themed portfolio website with terminal aesthetics, matrix rain background, and command-line interface design.
 
