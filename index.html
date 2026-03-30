@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[ root@cipher:~# ] - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas class="matrix-bg"></canvas>
+    <div class="scan-line"></div>
+    <div class="cursor-glow"></div>
+
+    <!-- Terminal Boot Screen -->
+    <div id="bootScreen" class="boot-screen">
+        <div class="boot-content">
+            <pre class="boot-text">
+[root@cipher ~]# init 5
+Loading kernel modules...
+[  OK  ] Started Security System
+[  OK  ] Started Network Manager
+[  OK  ] Started Firewall Service
+[  OK  ] Started Portfolio Interface
+
+System initialization complete.
+Launching portfolio...
+            </pre>
+        </div>
+    </div>
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <span class="prompt-symbol">root@cipher:~#</span>
+                <span class="cursor-blink">_</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-command="./home.sh"><span class="nav-prompt">~$</span> home</a></li>
+                <li><a href="#about" data-command="cat about.txt"><span class="nav-prompt">~$</span> about</a></li>
+                <li><a href="#experience" data-command="cat experience.log"><span class="nav-prompt">~$</span> experience</a></li>
+                <li><a href="#skills" data-command="ls skills/"><span class="nav-prompt">~$</span> skills</a></li>
+                <li><a href="#projects" data-command="ls projects/"><span class="nav-prompt">~$</span> projects</a></li>
+                <li><a href="#certifications" data-command="cat certs.txt"><span class="nav-prompt">~$</span> certs</a></li>
+                <li><a href="#contact" data-command="./contact.sh"><span class="nav-prompt">~$</span> contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="container">
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn-close"></span>
+                        <span class="btn-minimize"></span>
+                        <span class="btn-maximize"></span>
+                    </div>
+                    <div class="terminal-title">root@cipher: ~/portfolio</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="prompt">root@cipher</span>:<span class="path">~</span># whoami
+                    </div>
+                    <div class="terminal-output">
+                        <h1 class="glitch" data-text="">Satyendra Bharti</h1>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">root@cipher</span>:<span class="path">~</span># cat /etc/profile
+                    </div>
+                    <div class="terminal-output typing-container">
+                        <span class="typing-text"></span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">root@cipher</span>:<span class="path">~</span># ls -la specialization/
+                    </div>
+                    <div class="terminal-output">
+                        <div class="file-list">
+                            <div class="file-item">
+                                <i class="fas fa-shield-alt"></i> Cybersecurity Expert
+                            </div>
+                            <div class="file-item">
+                                <i class="fas fa-brain"></i> AI/ML Enthusiast
+                            </div>
+                            <div class="file-item">
+                                <i class="fas fa-code"></i> Full Stack Developer
+                            </div>
+                            <div class="file-item">
+                                <i class="fas fa-network-wired"></i> Network Security
+                            </div>
+                        </div>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">root@cipher</span>:<span class="path">~</span># ./init_commands.sh
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn-terminal">
+                            <i class="fas fa-terminal"></i> cd projects/
+                        </a>
+                        <a href="#contact" class="btn-terminal">
+                            <i class="fas fa-envelope"></i> ./contact.sh
+                        </a>
+                        <a href="#" class="btn-terminal" id="downloadResume">
+                            <i class="fas fa-download"></i> wget resume.pdf
+                        </a>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">root@cipher</span>:<span class="path">~</span># <span class="cursor-blink">█</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-terminal">
+                <div class="terminal-social-header">root@cipher:~/social#</div>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link" data-tooltip="GitHub">
+                        <i class="fab fa-github"></i>
+                        <!-- <span>gi</span> -->
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link" data-tooltip="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <!-- <span>linkedin.com</span> -->
+                    </a>
+                    <a href="https://twitter.com/yourusername" target="_blank" class="social-link" data-tooltip="Twitter">
+                        <i class="fab fa-twitter"></i>
+                        <!-- <span>twitter.com</span> -->
+                    </a>
+                    <a href="mailto:your.email@example.com" class="social-link" data-tooltip="Email">
+                        <i class="fas fa-envelope"></i>
+                        <!-- <span>email</span> -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="command-line">
+                    <span class="prompt">root@cipher</span>:<span class="path">~</span># cat about.txt
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="terminal-window">
+                    <div class="window-header">
+                        <span class="window-title">system_info.sh</span>
+                    </div>
+                    <div class="window-content">
+                        <div class="ascii-art">
+                            <pre>
+    ⠀⠀⠀⢀⣴⡾⠿⠿⠿⠿⢶⣦⣄⠀⠀⠀⠀
+    ⠀⠀⠀⠀⢠⣿⠁⠀⠀⠀⣀⣀⣀⣈⣻⣷⡄⠀
+    ⠀⠀⠀⠀⣾⡇⠀⠀⣾⣟⠛⠋⠉⠉⠙⠛⢷⣄
+    ⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣼⣷⣶
+    ⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠋⠉⠉⠙
+    ⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸
+    ⠀⠀⠀⠀⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿
+    ⠀⠀⠀⠀⠈⢿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠇
+    ⠀⠀⠀⠀⠀⠈⠻⣷⣦⣀⠀⠀⠀⠀⠀⠀⢀⣴⣿⠟⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠈⠛⠿⠿⠿⠿⠿⠿⠿⠿⠛⠁⠀⠀
+                            </pre>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-value">3+</div>
+                                <div class="stat-label">Internships</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">5+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">5</div>
+                                <div class="stat-label">Certifications</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">∞</div>
+                                <div class="stat-label">Lines of Code</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="window-header">
+                        <span class="window-title">profile.log</span>
+                    </div>
+                    <div class="window-content about-content">
+                        <h3 class="glitch-small" data-text="[ SYSTEM ADMINISTRATOR ]">[ SYSTEM ADMINISTRATOR ]</h3>
+                        <p class="about-text">
+                            <span class="text-success">[INFO]</span> Cybersecurity professional and Full Stack Developer specializing in 
+                            building secure, scalable applications with expertise in AI/ML integration. Currently interning at 
+                            NIELIT (MeitY) focusing on Artificial Intelligence and Machine Learning.
+                        </p>
+                        <p class="about-text">
+                            <span class="text-success">[INFO]</span> Experienced in developing firewall systems for network security, 
+                            creating web applications with Django, and implementing security protocols to detect and block 
+                            unauthorized access attempts. Passionate about ethical hacking and penetration testing.
+                        </p>
+                        
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">[NAME]:</span>
+                                <span class="info-value">Satyendra Bharti</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">[EMAIL]:</span>
+                                <span class="info-value">bhartisatyendra44@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">[LOCATION]:</span>
+                                <span class="info-value">Lucknow, India</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">[STATUS]:</span>
+                                <span class="info-value text-success">Available for Opportunities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="command-line">
+                    <span class="prompt">root@cipher</span>:<span class="path">~</span># cat /var/log/experience.log
+                </div>
+            </div>
+
+            <div class="timeline">
+                <!-- NIELIT Internship -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-icon"><i class="fas fa-brain"></i></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="terminal-window">
+                            <div class="window-header">
+                                <span class="window-title">nielit_internship.log</span>
+                                <span class="window-status">[ACTIVE]</span>
+                            </div>
+                            <div class="window-content">
+                                <div class="exp-header">
+                                    <div>
+                                        <h3 class="exp-title">Work-Based Learning (WBL) Intern - AI/ML</h3>
+                                        <p class="exp-company">
+                                            <i class="fas fa-building"></i> NIELIT (MeitY) - Lucknow
+                                        </p>
+                                    </div>
+                                    <div class="exp-date">
+                                        <i class="far fa-calendar"></i> Feb 2026 - Present
+                                    </div>
+                                </div>
+                                <div class="exp-description">
+                                    <p><span class="text-success">[INFO]</span> Currently working on Artificial Intelligence and Machine Learning projects at National Institute of Electronics & Information Technology under Ministry of Electronics and Information Technology.</p>
+                                    <ul class="exp-list">
+                                        <li><i class="fas fa-chevron-right"></i> Developing AI/ML models for real-world applications</li>
+                                        <li><i class="fas fa-chevron-right"></i> Working with neural networks and deep learning frameworks</li>
+                                        <li><i class="fas fa-chevron-right"></i> Implementing machine learning algorithms for data analysis</li>
+                                        <li><i class="fas fa-chevron-right"></i> Collaborating on government AI initiatives</li>
+                                    </ul>
+                                </div>
+                                <div class="exp-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">TensorFlow</span>
+                                    <span class="tag">PyTorch</span>
+                                    <span class="tag">Machine Learning</span>
+                                    <span class="tag">Deep Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C-DAC Internship -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-icon"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="terminal-window">
+                            <div class="window-header">
+                                <span class="window-title">cdac_internship.log</span>
+                                <span class="window-status text-muted">[COMPLETED]</span>
+                            </div>
+                            <div class="window-content">
+                                <div class="exp-header">
+                                    <div>
+                                        <h3 class="exp-title">Cybersecurity Intern</h3>
+                                        <p class="exp-company">
+                                            <i class="fas fa-building"></i> C-DAC Noida (Remote)
+                                        </p>
+                                    </div>
+                                    <div class="exp-date">
+                                        <i class="far fa-calendar"></i> June 2024 - July 2024
+                                    </div>
+                                </div>
+                                <div class="exp-description">
+                                    <p><span class="text-success">[INFO]</span> Gained hands-on experience in cybersecurity, focusing on network security and threat detection systems.</p>
+                                    <ul class="exp-list">
+                                        <li><i class="fas fa-chevron-right"></i> Learned various types of cyber attacks and defense mechanisms</li>
+                                        <li><i class="fas fa-chevron-right"></i> Studied network security protocols and implementation</li>
+                                        <li><i class="fas fa-chevron-right"></i> Developed a Firewall System that detects unauthorized IP addresses</li>
+                                        <li><i class="fas fa-chevron-right"></i> Implemented IP blocking mechanisms for security enhancement</li>
+                                        <li><i class="fas fa-chevron-right"></i> Analyzed network traffic patterns and security vulnerabilities</li>
+                                    </ul>
+                                    <p><span class="text-warning">[PROJECT]</span> <strong>Firewall System:</strong> Created an intelligent firewall that monitors network traffic, identifies unauthorized IP addresses, and automatically blocks suspicious activities to protect the network infrastructure.</p>
+                                </div>
+                                <div class="exp-tags">
+                                    <span class="tag">Network Security</span>
+                                    <span class="tag">Firewall</span>
+                                    <span class="tag">Threat Detection</span>
+                                    <span class="tag">IP Blocking</span>
+                                    <span class="tag">Security Protocols</span>
+                                    <span class="tag">Penetration Testing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Softpro India Internship -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="terminal-window">
+                            <div class="window-header">
+                                <span class="window-title">softpro_internship.log</span>
+                                <span class="window-status text-muted">[COMPLETED]</span>
+                            </div>
+                            <div class="window-content">
+                                <div class="exp-header">
+                                    <div>
+                                        <h3 class="exp-title">Python Django Developer</h3>
+                                        <p class="exp-company">
+                                            <i class="fas fa-building"></i> Softpro India Pvt. Ltd. - Lucknow
+                                        </p>
+                                    </div>
+                                    <div class="exp-date">
+                                        <i class="far fa-calendar"></i> 2023
+                                    </div>
+                                </div>
+                                <div class="exp-description">
+                                    <p><span class="text-success">[INFO]</span> Worked as a Python Django developer, building robust web applications and RESTful APIs.</p>
+                                    <ul class="exp-list">
+                                        <li><i class="fas fa-chevron-right"></i> Developed full-stack web applications using Django framework</li>
+                                        <li><i class="fas fa-chevron-right"></i> Designed and implemented database schemas with Django ORM</li>
+                                        <li><i class="fas fa-chevron-right"></i> Created RESTful APIs for frontend-backend communication</li>
+                                        <li><i class="fas fa-chevron-right"></i> Implemented user authentication and authorization systems</li>
+                                        <li><i class="fas fa-chevron-right"></i> Optimized application performance and database queries</li>
+                                        <li><i class="fas fa-chevron-right"></i> Collaborated with team members using Git version control</li>
+                                    </ul>
+                                </div>
+                                <div class="exp-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Django</span>
+                                    <span class="tag">REST API</span>
+                                    <span class="tag">HTML/CSS</span>
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">Git</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="command-line">
+                    <span class="prompt">root@cipher</span>:<span class="path">~</span># ls -la /usr/local/skills/
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="terminal-window">
+                    <div class="window-header">
+                        <span class="window-title">cybersecurity.sh</span>
+                    </div>
+                    <div class="window-content">
+                        <div class="skill-category-icon"><i class="fas fa-user-secret"></i></div>
+                        <h3>Cybersecurity</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Penetration Testing</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Network Security</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Firewall Systems</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Threat Detection</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">OWASP Top 10</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="window-header">
+                        <span class="window-title">ai_ml.py</span>
+                    </div>
+                    <div class="window-content">
+                        <div class="skill-category-icon"><i class="fas fa-brain"></i></div>
+                        <h3>AI/ML & Data Science</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Machine Learning</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Deep Learning</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">TensorFlow/PyTorch</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Data Analysis</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python (Pandas/NumPy)</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="window-header">
+                        <span class="window-title">backend.py</span>
+                    </div>
+                    <div class="window-content">
+                        <div class="skill-category-icon"><i class="fas fa-server"></i></div>
+                        <h3>Backend Development</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Python/Django</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js/Express</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">REST API Design</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">PostgreSQL/MongoDB</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">FastAPI</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="window-header">
+                        <span class="window-title">frontend.js</span>
+                    </div>
+                    <div class="window-content">
+                        <div class="skill-category-icon"><i class="fas fa-palette"></i></div>
+                        <h3>Frontend Development</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">HTML/CSS/JavaScript</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React.js</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">TypeScript</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Responsive Design</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Tailwind CSS</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="window-header">
+                        <span class="window-title">devops.conf</span>
+                    </div>
+                    <div class="window-content">
+                        <div class="skill-category-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>DevOps & Tools</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Git/GitHub</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Docker</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Linux/Bash</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">CI/CD Pipelines</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">AWS/Cloud Services</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 78%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window">
+                    <div class="window-header">
+                        <span class="window-title">security_tools.list</span>
+                    </div>
+                    <div class="window-content">
+                        <div class="skill-category-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Security Tools</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Nmap</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Wireshark</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Burp Suite</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Metasploit</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Kali Linux</span>
+                                <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="command-line">
+                    <span class="prompt">root@cipher</span>:<span class="path">~</span># tree projects/
+                </div>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🔥</div>
+                        <div class="project-status">[FEATURED]</div>
+                    </div>
+                    <h3 class="project-title">Intelligent Firewall System</h3>
+                    <p class="project-description">
+                        Advanced firewall system developed during C-DAC internship. Monitors network traffic in real-time, 
+                        detects unauthorized IP addresses using machine learning algorithms, and automatically blocks 
+                        suspicious activities to prevent security breaches.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tag">Python</span>
+                        <span class="tag">Network Security</span>
+                        <span class="tag">iptables</span>
+                        <span class="tag">Threat Detection</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Demo
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🌐</div>
+                        <div class="project-status">[PRODUCTION]</div>
+                    </div>
+                    <h3 class="project-title">Django Web Application</h3>
+                    <p class="project-description">
+                        Full-stack web application built with Django framework at Softpro India. Features include user 
+                        authentication, role-based access control, RESTful API, and responsive UI for seamless user experience.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tag">Django</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Demo
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🤖</div>
+                        <div class="project-status">[ONGOING]</div>
+                    </div>
+                    <h3 class="project-title">AI/ML Security Analytics</h3>
+                    <p class="project-description">
+                        Machine learning project at NIELIT for analyzing security threats using AI. Implements neural networks 
+                        to predict and classify potential security vulnerabilities in real-time system monitoring.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Demo
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🔐</div>
+                        <div class="project-status">[COMPLETED]</div>
+                    </div>
+                    <h3 class="project-title">Vulnerability Scanner</h3>
+                    <p class="project-description">
+                        Automated security vulnerability scanner that identifies common web application vulnerabilities. 
+                        Provides detailed reports with remediation suggestions based on OWASP security standards.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tag">Python</span>
+                        <span class="tag">Nmap</span>
+                        <span class="tag">BeautifulSoup</span>
+                        <span class="tag">SQLite</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Demo
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">📊</div>
+                        <div class="project-status">[COMPLETED]</div>
+                    </div>
+                    <h3 class="project-title">Network Traffic Analyzer</h3>
+                    <p class="project-description">
+                        Real-time network traffic analysis tool with visualization dashboard. Monitors packet flow, 
+                        identifies anomalies, and generates comprehensive reports for network administrators.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scapy</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">Chart.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Demo
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🎯</div>
+                        <div class="project-status">[COMPLETED]</div>
+                    </div>
+                    <h3 class="project-title">Password Strength Analyzer</h3>
+                    <p class="project-description">
+                        Intelligent password strength analyzer using machine learning. Evaluates password complexity, 
+                        suggests improvements, and educates users about password security best practices.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tag">Python</span>
+                        <span class="tag">ML Algorithms</span>
+                        <span class="tag">React</span>
+                        <span class="tag">API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Demo
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <div class="command-line">
+                    <span class="prompt">root@cipher</span>:<span class="path">~</span># cat certifications.txt
+                </div>
+            </div>
+
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certified Ethical Hacker (CEH)</h3>
+                    <p class="cert-issuer">EC-Council</p>
+                    <p class="cert-date">Valid: 2023 - 2026</p>
+                    <a href="#" class="cert-verify">
+                        <i class="fas fa-check-circle"></i> Verify Credential
+                    </a>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>CompTIA Security+</h3>
+                    <p class="cert-issuer">CompTIA</p>
+                    <p class="cert-date">Valid: 2023 - 2026</p>
+                    <a href="#" class="cert-verify">
+                        <i class="fas fa-check-circle"></i> Verify Credential
+                    </a>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>AWS Certified Solutions Architect</h3>
+                    <p class="cert-issuer">Amazon Web Services</p>
+                    <p class="cert-date">Valid: 2024 - 2027</p>
+                    <a href="#" class="cert-verify">
+                        <i class="fas fa-check-circle"></i> Verify Credential
+                    </a>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i class="fas fa-python"></i>
+                    </div>
+                    <h3>Python for Data Science</h3>
+                    <p class="cert-issuer">IBM / Coursera</p>
+                    <p class="cert-date">Issued: 2024</p>
+                    <a href="#" class="cert-verify">
+                        <i class="fas fa-check-circle"></i> Verify Credential
+                    </a>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Machine Learning Specialization</h3>
+                    <p class="cert-issuer">Stanford / Coursera</p>
+                    <p class="cert-date">Issued: 2024</p>
+                    <a href="#" class="cert-verify">
+                        <i class="fas fa-check-circle"></i> Verify Credential
+                    </a>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Network Security Fundamentals</h3>
+                    <p class="cert-issuer">Cisco</p>
+                    <p class="cert-date">Issued: 2023</p>
+                    <a href="#" class="cert-verify">
+                        <i class="fas fa-check-circle"></i> Verify Credential
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="command-line">
+                    <span class="prompt">root@cipher</span>:<span class="path">~</span># ./contact.sh --send-message
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="terminal-window">
+                        <div class="window-header">
+                            <span class="window-title">contact_info.txt</span>
+                        </div>
+                        <div class="window-content">
+                            <h3 class="glitch-small" data-text="[ INITIATE CONTACT ]">[ INITIATE CONTACT ]</h3>
+                            <p class="contact-desc">
+                                <span class="text-success">[INFO]</span> System ready to receive your message. 
+                                Fill out the form and execute the send command. Your message will be transmitted 
+                                securely to my email server.
+                            </p>
+
+                            <div class="contact-items">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <div>
+                                        <strong>Email</strong>
+                                        <p>bhartisatyendra44@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div>
+                                        <strong>Location</strong>
+                                        <p>Lucknow, Uttar Pradesh, India</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <div>
+                                        <strong>Response Time</strong>
+                                        <p>Within 24 hours</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <div>
+                                        <strong>Phone</strong>
+                                        <p>+91 8765381823</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="social-connect">
+                                <p><span class="text-warning">[SOCIAL]</span> Connect on:</p>
+                                <div class="social-links-contact">
+                                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <div class="terminal-window">
+                        <div class="window-header">
+                            <span class="window-title">send_message.sh</span>
+                        </div>
+                        <div class="window-content">
+                            <form id="contactForm">
+                                <div id="formStatus" class="form-status"></div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <i class="fas fa-user"></i> [NAME]:
+                                    </label>
+                                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <i class="fas fa-envelope"></i> [EMAIL]:
+                                    </label>
+                                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <i class="fas fa-tag"></i> [SUBJECT]:
+                                    </label>
+                                    <input type="text" id="subject" name="subject" required placeholder="Subject of your message">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <i class="fas fa-terminal"></i> [MESSAGE]:
+                                    </label>
+                                    <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
+                                </div>
+
+                                <button type="submit" class="btn-submit">
+                                    <i class="fas fa-paper-plane"></i> ./send_message.sh --execute
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-ascii">
+                    <pre>
+ ██████╗  ██████╗  ██████╗ ████████╗
+ ██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝
+ ██████╔╝██║   ██║██║   ██║   ██║   
+ ██╔══██╗██║   ██║██║   ██║   ██║   
+ ██║  ██║╚██████╔╝╚██████╔╝   ██║   
+ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   
+                    </pre>
+                </div>
+                <p class="footer-text">
+                    <span class="prompt">root@cipher</span>:<span class="path">~</span># echo "© 2026 - All Rights Reserved"
+                </p>
+                <p class="footer-credit">
+                    [ CRAFTED WITH <span class="text-error">&lt;/&gt;</span> AND PASSION ]
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
