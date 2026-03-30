@@ -2,7 +2,7 @@
 
 A professional cybersecurity-themed portfolio website with terminal aesthetics, matrix rain background, and command-line interface design.
 
-![Portfolio Preview](https://via.placeholder.com/800x400/000000/00ff00?text=BLACKHAT+PORTFOLIO)
+![Portfolio Preview]( https://cipher-bhai.github.io/Portfolio/)
 
 ## 🎯 FEATURES
 
