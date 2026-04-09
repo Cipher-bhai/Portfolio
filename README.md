@@ -18,10 +18,7 @@ A professional cybersecurity-themed portfolio website with terminal aesthetics, 
 ### 📋 Sections
 1. **Home** - Hero section with typing animation
 2. **About** - Professional bio with stats
-3. **Experience** - Timeline with your 3 internships:
-   - NIELIT (MeitY) - AI/ML (Feb 2026 - Present)
-   - C-DAC Noida - Cybersecurity (June-July 2024)
-   - Softpro India - Django Development (2023)
+3. **Experience** - Timeline with  3 internships:
 4. **Skills** - 6 categories with progress bars
 5. **Projects** - 6 featured projects with tech tags
 6. **Certifications** - Professional credentials
@@ -44,8 +41,7 @@ portfolio/
 ├── index.html          # Main HTML file
 ├── style.css           # All styling (blackhat theme)
 ├── script.js           # JavaScript functionality
-├── DEPLOYMENT_GUIDE.md # Detailed deployment instructions
-└── README.md           # This file
+└── README.md           # This file is Readme Markdown
 ```
 
 
